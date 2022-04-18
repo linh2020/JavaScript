@@ -138,12 +138,4 @@ Array.prototype.myForEach = (callback) => {
 
 }
 
-
-// test 1213
-// test 1217
-// test 1217-1
-// test 1228
-// test 1
-// test 2
-// test3
-// test 4
+// console.log(1237)
