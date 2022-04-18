@@ -144,3 +144,4 @@ Array.prototype.myForEach = (callback) => {
 // test 1217-1
 // test 1228
 // test 1
+// test 2
