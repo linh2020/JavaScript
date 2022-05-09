@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--  -->
+
+    <!-- <script
+      crossorigin
+      src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js"
+    ></script> -->
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- <h1>Add React to Web Application</h1> -->
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const entries = [
+        {
+          API: "AdoptAPet",
+          Description: "Resource to help get pets adopted",
+          Auth: "apiKey",
+          HTTPS: true,
+          Cors: "yes",
+          Link: "https://www.adoptapet.com/public/apis/pet_list.html",
+          Category: "Animals",
+        },
+        {
+          API: "Axolotl",
+          Description: "Collection of axolotl pictures and facts",
+          Auth: "apiKey",
+          HTTPS: true,
+          Cors: "no",
+          Link: "https://theaxolotlapi.netlify.app/",
+          Category: "Animals",
+        },
+        {
+          API: "Cat Facts",
+          Description: "Daily cat facts",
+          Auth: "apiKey",
+          HTTPS: true,
+          Cors: "no",
+          Link: "https://alexwohlbruck.github.io/cat-facts/",
+          Category: "Animals",
+        },
+        {
+          API: "Cataas",
+          Description: "Cat as a service (cats pictures and gifs)",
+          Auth: "apiKey",
+          HTTPS: true,
+          Cors: "no",
+          Link: "https://cataas.com/",
+          Category: "Animals",
+        },
+      ];
+
+      function Cat({ API, Description, Auth, HTTPS, Cors, Link, Category }) {
+        return (
+          <div>
+            <li>
+              <h2>{API}</h2>
+            </li>
+            <li>
+              <p>{Description}</p>
+            </li>
+            <li>{Auth}</li>
+            <li>{Cors}</li>
+            <li>
+              <a href={Link} target="_blank">
+                {Link}
+              </a>
+            </li>
+            <li>{Category}</li>
+            <hr />
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <ul>
+              {entries.map((entry, index) => {
+                return (
+                  <Cat
+                    key={index}
+                    API={entry.API}
+                    Description={entry.Description}
+                    Auth={entry.Auth}
+                    HTTPS={entry.HTTPS}
+                    Cors={entry.Cors}
+                    Link={entry.Link}
+                    Category={entry.Category}
+                  />
+                );
+              })}
+            </ul>
+          </div>
+        );
+      }
+
+      //Render
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+  </body>
+</html>
